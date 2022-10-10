@@ -1,0 +1,56 @@
+.introduction {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.introduction p {
+  font-family: 'Roboto Mono';
+  /* font-weight: 700; Cause cutting the text */
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.name {
+  width: 21ch;
+  font-size: 1rem;
+  font-weight: 700;
+  animation: typing 1.5s steps(21);
+}
+
+.profession {
+  width: 13ch;
+  visibility: hidden;
+  font-size: 1rem;
+  font-weight: 500;
+  animation: show 0s 1.5s forwards, typing 1.5s 1.5s steps(13);
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes show {
+  to {
+    visibility: visible;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .name {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .name {
+    font-size: 3rem;
+  }
+  .profession {
+    font-size: 2rem;
+  }
+}
