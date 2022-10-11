@@ -7,7 +7,7 @@
 }
 
 .introduction p {
-  font-family: 'Roboto Mono';
+  font-family: monospace;
   /* font-weight: 700; Cause cutting the text */
   overflow: hidden;
   white-space: nowrap;
