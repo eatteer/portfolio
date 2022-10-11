@@ -56,7 +56,10 @@ export const Contact = () => {
           )
         })}
       </div>
-      <h3 className='mb-4 text-xl font-mono font-bold'>Send me a message</h3>
+      {/* <h3 className='mb-4 text-xl font-mono font-bold'>Send me a message</h3> */}
+      <h3 className='mb-4 text-xl font-mono font-bold'>
+        Form temporary disabled!
+      </h3>
       <form
         className='flex flex-col items-start gap-4 mb-4'
         onSubmit={handleSubmit}
