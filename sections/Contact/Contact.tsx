@@ -1,7 +1,47 @@
 import { contacts } from './data'
 import { IoSend } from 'react-icons/io5'
+import { ChangeEventHandler, FormEventHandler, useState } from 'react'
+import axios from 'axios'
+import { ContactFormSchema } from './types'
+
+const initialContactFormData: ContactFormSchema = {
+  name: '',
+  email: '',
+  subject: '',
+  message: '',
+}
 
 export const Contact = () => {
+  const [contactFormData, setContactFormData] = useState<ContactFormSchema>(
+    initialContactFormData
+  )
+
+  const handleOnChangeInput: ChangeEventHandler<HTMLInputElement> = (event) => {
+    const { id, value } = event.target
+    setContactFormData((prev) => {
+      return { ...prev, [id]: value }
+    })
+  }
+
+  const handleOnChangeTextArea: ChangeEventHandler<HTMLTextAreaElement> = (
+    event
+  ) => {
+    const { id, value } = event.target
+    setContactFormData((prev) => {
+      return { ...prev, [id]: value }
+    })
+  }
+
+  const handleSubmit: FormEventHandler<HTMLFormElement> = async (event) => {
+    event.preventDefault()
+    const response = await axios.post<{ message: string }>(
+      '/api/email',
+      contactFormData
+    )
+    const { data } = response
+    console.log(data)
+  }
+
   return (
     <section id='contact' className='vessel apoi-hidden'>
       <h2 className='mb-4 text-2xl font-mono font-bold'>Contact</h2>
@@ -17,28 +57,60 @@ export const Contact = () => {
         })}
       </div>
       <h3 className='mb-4 text-xl font-mono font-bold'>Send me a message</h3>
-      <form className='flex flex-col items-start gap-4 mb-4'>
+      <form
+        className='flex flex-col items-start gap-4 mb-4'
+        onSubmit={handleSubmit}
+      >
         <div className='flex flex-col lg:flex-row justify-between gap-4 w-full'>
           <div className='input-field'>
             <label className='label' htmlFor='name'>
               Name
             </label>
-            <input className='input' type='text' id='name' />
+            <input
+              className='input'
+              type='text'
+              id='name'
+              disabled
+              onChange={handleOnChangeInput}
+            />
           </div>
           <div className='input-field'>
             <label className='label' htmlFor='email'>
               Email
             </label>
-            <input className='input' type='text' id='email' />
+            <input
+              className='input'
+              type='email'
+              id='email'
+              disabled
+              onChange={handleOnChangeInput}
+            />
           </div>
+        </div>
+        <div className='input-field'>
+          <label className='label' htmlFor='subject'>
+            Subject
+          </label>
+          <input
+            className='input'
+            type='text'
+            id='subject'
+            disabled
+            onChange={handleOnChangeInput}
+          />
         </div>
         <div className='input-field'>
           <label className='label' htmlFor='message'>
             Message
           </label>
-          <textarea className='input resize-none' id='message'></textarea>
+          <textarea
+            className='input resize-none'
+            id='message'
+            disabled
+            onChange={handleOnChangeTextArea}
+          ></textarea>
         </div>
-        <button className='button'>
+        <button className='button' type='submit' disabled>
           Submit <IoSend />
         </button>
       </form>
