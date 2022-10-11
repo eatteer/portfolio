@@ -57,9 +57,10 @@ export const Contact = () => {
         })}
       </div>
       {/* <h3 className='mb-4 text-xl font-mono font-bold'>Send me a message</h3> */}
-      <h3 className='mb-4 text-xl font-mono font-bold'>
+      <h3 className='text-xl font-mono font-bold'>
         Form temporarily disabled!
       </h3>
+      <p className='mb-4'>But you can use my social networks to contact me</p>
       <form
         className='flex flex-col items-start gap-4 mb-4'
         onSubmit={handleSubmit}
