@@ -10,7 +10,7 @@ export const useSetupAnimateOpacityOnIntersection = () => {
           entry.target.classList.remove('apoi-show')
         }
       })
-    })
+    }, { rootMargin: '-20px' })
 
     const hiddenElements = document.querySelectorAll('.apoi-hidden')
     hiddenElements.forEach((element) => observer.observe(element))
