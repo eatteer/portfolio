@@ -23,7 +23,7 @@ const Portfolio = () => {
                 <div
                   className='flex-grow p-4
                   rounded-bl-md rounded-br-md
-                  backdrop-blur-sm bg-white/10'
+                bg-white/10'
                 >
                   <h2 className='font-mono font-bold'>{title}</h2>
                   <p className='mb-2 text-sm'> was built with</p>

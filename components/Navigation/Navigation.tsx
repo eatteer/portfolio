@@ -12,7 +12,7 @@ export const Navigation = () => {
         <ul
           className='flex flex-col gap-8 p-4
           border border-white/10 rounded-lg
-          backdrop-blur-sm bg-white/10'
+          bg-white/10'
         >
           {items.map((item) => {
             return (

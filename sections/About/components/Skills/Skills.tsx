@@ -11,7 +11,7 @@ export const Skills = ({ skills }: Props) => {
         return (
           <li
             key={name}
-            className='p-2 border border-white/10 rounded-md font-mono backdrop-blur-sm bg-white/10'
+            className='p-2 border border-white/10 rounded-md font-mono bg-white/10'
           >
             {name}
           </li>

@@ -21,7 +21,7 @@ export const MobileNavigation = () => {
             <ul
               className='flex flex-col gap-8 p-4
                 border border-white/10 rounded-lg
-                backdrop-blur-sm bg-[#260819ce]'
+                bg-[#260819ce]'
             >
               {items.map((item) => {
                 const { href, icon } = item
@@ -42,7 +42,7 @@ export const MobileNavigation = () => {
       <button
         className='flex mt-4 p-4
           border border-white/10 rounded-lg
-          backdrop-blur-sm bg-[#260819ce]'
+          bg-[#260819ce]'
         onClick={toggleOpen}
       >
         <IoChevronUp size={24} />
