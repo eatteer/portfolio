@@ -1,21 +1,20 @@
-import {
-  IoLogoLinkedin,
-  IoLogoGithub,
-  IoLogoWhatsapp,
-  IoMail,
-  IoSend,
-} from 'react-icons/io5'
+import { IoSend } from 'react-icons/io5'
+import { contacts } from './data'
 
 export const Contact = () => {
-  const socialButtonSize = 32
   return (
     <section id='contact' className='_container'>
       <h2 className='mb-4 text-2xl font-mono font-bold'>Contact</h2>
       <div className='flex gap-4 mb-4'>
-        <IoLogoLinkedin size={socialButtonSize} />
-        <IoLogoGithub size={socialButtonSize} />
-        <IoLogoWhatsapp size={socialButtonSize} />
-        <IoMail size={socialButtonSize} />
+        {contacts.map((contact) => {
+          const { icon, url } = contact
+          const Icon = icon
+          return (
+            <a key={url} href={url} target='_blank' rel='noreferrer'>
+              <Icon size={32} />
+            </a>
+          )
+        })}
       </div>
       <h3 className='mb-4 text-xl font-mono font-bold'>Send me a message</h3>
       <form className='flex flex-col items-start gap-4 mb-4'>
