@@ -4,40 +4,49 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  html {
-    font-family: 'Roboto', system-ui, sans-serif;
-    scroll-behavior: smooth;
-  }
+html {
+  font-family: 'Roboto', system-ui, sans-serif;
+  scroll-behavior: smooth;
+}
 
-  body {
-    background: rgb(0, 0, 0);
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(38, 8, 25, 1) 30%,
-      rgba(37, 14, 6, 1) 70%,
-      rgba(0, 0, 0, 1) 100%
-    );
-    color: white;
-  }
+body {
+  background-color: black;
+  background-image: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(38, 8, 25, 1) 30%,
+    rgba(37, 14, 6, 1) 70%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  color: white;
+}
+
+/* VESSEL FOR LAYOUT */
+.vessel {
+  --min-horizontal-margin: 1rem;
+  --max-width: 768px;
+  --min-m: var(--min-horizontal-margin);
+  --auto-m: calc((100vw - var(--max-width)) / 2);
+  max-width: var(--max-width);
+  margin: 0 max(var(--min-m), var(--auto-m));
+  padding: 1rem 0;
+}
+
+/* ANIMATE OPACITY ON INTERSECTION */
+.apoi-hidden {
+  opacity: 0;
+  transition: all 1.5s ease-in-out;
+}
+
+.apoi-show {
+  opacity: 1;
 }
 
 @layer components {
-  ._container {
-    --min-horizontal-margin: 1rem;
-    --max-width: 768px;
-    --min-m: var(--min-horizontal-margin);
-    --auto-m: calc((100vw - var(--max-width)) / 2);
-    max-width: var(--max-width);
-    margin: 0 max(var(--min-m), var(--auto-m));
-    padding: 1rem 0;
-  }
-
   /* FOR BUTTONS */
   .button {
     @apply flex justify-center items-center gap-2 py-2 px-4
-    border border-white/10 rounded font-mono
+    border border-white/10 rounded text-base font-mono
     bg-white/10
     transition-all duration-200 cursor-pointer
     hover:bg-white/20;

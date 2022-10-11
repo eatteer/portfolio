@@ -1,9 +1,9 @@
-import { IoSend } from 'react-icons/io5'
 import { contacts } from './data'
+import { IoSend } from 'react-icons/io5'
 
 export const Contact = () => {
   return (
-    <section id='contact' className='_container'>
+    <section id='contact' className='vessel apoi-hidden'>
       <h2 className='mb-4 text-2xl font-mono font-bold'>Contact</h2>
       <div className='flex gap-4 mb-4'>
         {contacts.map((contact) => {
