@@ -49,4 +49,20 @@ export const portfolio: Project[] = [
     repositoryUrl: 'https://github.com/eatteer/moviedb-v1',
     stack: ['Dart', 'Flutter'],
   },
+  {
+    title: 'Aprendible Posts',
+    imageUrl:
+      'https://user-images.githubusercontent.com/55556476/199030370-835fb1f4-b201-4d56-ac1e-7ff43b184d01.png',
+    productionUrl: 'https://sea-turtle-app-esh6g.ondigitalocean.app/posts',
+    repositoryUrl: 'https://github.com/eatteer/aprendible-laravel-crash-course',
+    stack: ['PHP', 'Laravel', 'TailwindCSS'],
+  },
+  {
+    title: 'Laragigs',
+    imageUrl:
+      'https://user-images.githubusercontent.com/55556476/199031046-102fa388-f23d-4e39-8a83-e490f186678d.png',
+    productionUrl: 'https://jellyfish-app-ee2ia.ondigitalocean.app/',
+    repositoryUrl: 'https://github.com/eatteer/laragigs-crash-course',
+    stack: ['PHP', 'Laravel', 'TailwindCSS'],
+  }
 ]
