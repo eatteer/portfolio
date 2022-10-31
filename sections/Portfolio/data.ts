@@ -37,7 +37,7 @@ export const portfolio: Project[] = [
     title: 'Demon Slayer Login',
     imageUrl:
       'https://user-images.githubusercontent.com/55556476/178786851-0bf95654-0458-4384-80e0-6230f3836b60.png',
-    productionUrl: '',
+    productionUrl: 'https://demon-slayer-login.vercel.app/',
     repositoryUrl: 'https://github.com/eatteer/demon-slayer-login',
     stack: ['HTML', 'CSS'],
   },
